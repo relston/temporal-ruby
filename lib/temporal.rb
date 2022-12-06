@@ -38,6 +38,7 @@ module Temporal
     end
 
     def configuration
+      binding.pry
       warn '[DEPRECATION] This method is now deprecated without a substitution'
       config
     end

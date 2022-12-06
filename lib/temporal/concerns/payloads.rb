@@ -60,7 +60,11 @@ module Temporal
       private
 
       def payload_converter
-        Temporal.configuration.converter
+        @payload_converter ||= begin
+          Temporal.configure do |configuration|
+            @payload_converter = configuration.converter
+          end
+        end
       end
     end
   end
